@@ -7,5 +7,5 @@
 3.Modify the data of an employee.<br />
 4.View the data of an employee.<br />
 5.View all the employee's data.<br /> 
-6.Exit.<br />
-all that using a uniqe ID for every record and doesn't allow to reapeat it.
+6.Exit.<br /><br />
+all that using a unique ID for every record and doesn't allow to reapeat it.
