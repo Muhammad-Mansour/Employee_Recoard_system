@@ -96,6 +96,7 @@ EN_LINKEDLIST_STATE LL_deleteNode_value(LL_t *mylist,int val)
         mylist->head = current->next;
         current = NULL;
         mylist->size--;
+        printf("Done Deleting.\n");
         return LL_OK;
     }
 
@@ -109,12 +110,13 @@ EN_LINKEDLIST_STATE LL_deleteNode_value(LL_t *mylist,int val)
             prev->next = current->next;
             free(current);
             mylist->size--;
+            printf("Done Deleting.\n");
             return LL_OK;
         }
         prev = current;
         current = current->next;  
     }
-    printf("Deletion failed : node not found\n");
+    printf("Deletion faild.\n");
     return NODE_NOT_FOUND;
 }
 
@@ -193,10 +195,7 @@ node_t *LL_search_node(LL_t * mylist , int val )
     
     //check if list is empty
     if(mylist->head == NULL)
-    {
-        printf("List is empty.\n");
         return NULL;
-    }
         
     //create node to access the wanted node
     node_t *current = mylist->head;
@@ -209,7 +208,7 @@ node_t *LL_search_node(LL_t * mylist , int val )
         current = current->next;
     }
 
-    printf("Node not found\n");
+    printf("not found\n");
     return NULL;
 }
 

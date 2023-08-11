@@ -65,6 +65,7 @@ void app(){
             case 6:
                 system("cls");
                 printf("Thanks for using the program\n");
+                Sleep(1000);
                 exit(0);
                 break;
         
@@ -73,9 +74,11 @@ void app(){
                 break;
         }
 
-        printf("\n\nThanks for using the program press any key to continue or (ESC) to exit.");
+        printf("\n\nThanks for using the program press any key to continue or (ESC) to exit.\n");
     }while (getch() != 27);
 
+    printf("Thanks for using the program\n");
+    Sleep(1000);
     free_LL(newlist);
 }
 
@@ -168,10 +171,9 @@ EN_EMPLOYEE_STATE add_employee(LL_t *listOfEmployee)
 EN_EMPLOYEE_STATE delete_employee(LL_t *listOfEmployee)
 {
     int ID_ofEmployee=0;
-    printf("enter the id of the employee : ");
+    printf("Enter the id of the employee : ");
     scanf("%d",&ID_ofEmployee);
     LL_deleteNode_value(listOfEmployee,ID_ofEmployee);
-    printf("Deleting completed successfully \n");
     return EmployeeSystem_OK;
 }
 
@@ -200,6 +202,10 @@ EN_EMPLOYEE_STATE modify_employee(LL_t *listOfEmployee)
     printf("Enter the id of the employee : ");
     scanf("%d",&ID_ofEmployee);
     newData_of_employee = LL_search_node(listOfEmployee,ID_ofEmployee);
+
+    if (newData_of_employee == NULL)
+        return EmployeeSystem_EMPTY;
+    
 
     //
     printf("to modify:-\n"

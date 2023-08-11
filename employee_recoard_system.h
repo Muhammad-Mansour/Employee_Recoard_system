@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "singly_linkedlist.h"
+#include<windows.h>
 
 typedef enum tage_employee{
     EmployeeSystem_OK,
